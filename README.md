@@ -6,8 +6,7 @@ Sugar Labs Highlight DDLB Field provides a new data type that provides the abili
 * Download the latest .tgz package here: https://github.com/sugarcrmlabs/HighlightDDLBField/releases/latest
 * Load the package in your target instance using Module Loader
 * Log in as an admin user
-* Go to Studio and view the Fields for the Contacts module
-* You will see two add a new field of type 'DDLB'
+* Go to Studio and add a new field of type 'DDLB'
 * You will see at the bottom of the new field screen each value of the DDLB list type selected
 * Define what text color you want, and then what color you want each value to use
 ```
