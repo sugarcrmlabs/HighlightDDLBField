@@ -54,11 +54,32 @@
             }
             html += "<div>" +
             "<span style='display: inline-block; margin: 0px 5px 15px 15px; width: 50px;'>" + value + ":</span>" +
-            "<input type='color' id='color_" + key + "' name='colors[" + key + "]' value='" + color + "'>" +
+            "<input type='color' id='color_" + key + "' name='arr_colors[" + key + "]' value='" + color + "' class='arr_colors' data-key='"+key+"'>" +
             "</div>";
         });
-
+        html += '<input type="hidden" id="colors" name="colors" />';
         $("#color_value_container").html(html);
+    }
+
+    /**
+  	 * On page load call populate colors hidden input field
+  	 */
+    updateColorsHiddenInputField();
+
+    /**
+	   * Bind updateColorsHiddenInputField() onChange of the .arr_colors elements
+     */
+    $(".arr_colors").change(function(){updateColorsHiddenInputField()});
+
+    /**
+	   * Populate the colors hidden input field with JSON string generated from array colors (name="arr_colors") fields
+	   */
+    function updateColorsHiddenInputField() {
+        var objColors = {};
+        $.each($('.arr_colors'), function(key, value){
+            objColors[$(value).attr('data-key')] = $(value).val();
+        });
+        $('input[name="colors"]').val(JSON.stringify(objColors));
     }
 </script>
 {/literal}

@@ -80,6 +80,9 @@ function get_body(&$ss, $vardef)
         $text_color = "#000000";
     }
 
+    if(!is_array($colors)) {
+      $colors = json_decode($colors);
+    }
 
     $colorsJs = "var colorsDef = {";
     $colorsJsValues = '';
