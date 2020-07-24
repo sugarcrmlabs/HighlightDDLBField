@@ -21,7 +21,12 @@
      * @param value
      */
     format: function(value) {
-        this.bgColor = this.def.colors[value];
+		var bgColor = '#ffffff';
+		if(!_.isEmpty(this.def.colors)) {
+			var arrColors = JSON.parse(this.def.colors);
+			bgColor = arrColors[value];
+		}        
+        this.bgColor = bgColor;
         this.txtColor = this.def.text_color;
         return this._super('format', [value]);
     },
