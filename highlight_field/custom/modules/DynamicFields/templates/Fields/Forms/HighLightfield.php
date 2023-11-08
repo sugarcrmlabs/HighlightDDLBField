@@ -1,12 +1,23 @@
 <?php
+/*
+* Your installation or use of this SugarCRM file is subject to the applicable
+* terms available at
+* https://www.sugarcrm.com/legal/agreements/customers/master-subscription/
+* If you do not agree to all of the applicable terms or do not have the
+* authority to bind the entity as an authorized representative, then do not
+* install or use this SugarCRM file.
+*
+* Copyright (C) SugarCRM Inc. All rights reserved.
+*/
+
 /**
- * Implement get_body function to correctly populate the template for the ModuleBuilder/Studio
- * Add field page.
- *
- * @param Sugar_Smarty $ss
- * @param array $vardef
- *
- */
+* Implement get_body function to correctly populate the template for the ModuleBuilder/Studio
+* Add field page.
+*
+* @param Sugar_Smarty $ss
+* @param array $vardef
+*
+*/
 function get_body(&$ss, $vardef)
 {
     $multi = false;
