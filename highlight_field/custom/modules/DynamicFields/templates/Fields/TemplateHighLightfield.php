@@ -10,6 +10,9 @@
 * Copyright (C) SugarCRM Inc. All rights reserved.
 */
 
+use Symfony\Component\Validator\Constraints as AssertBasic;
+use Sugarcrm\Sugarcrm\Security\InputValidation\Request;
+
 require_once('modules/DynamicFields/templates/Fields/TemplateEnum.php');
 
 class TemplateHighLightfield extends TemplateEnum
@@ -18,14 +21,24 @@ class TemplateHighLightfield extends TemplateEnum
     {
         parent::__construct();
         $this->vardef_map['ext2'] = 'colors';
-        $this->vardef_map['colors'] = 'ext2';
+        $this->vardef_map['colors'] = 'enum';
         $this->vardef_map['text_color'] = 'ext3';
         $this->vardef_map['ext3'] = 'text_color';
+
+        $this->vardefMapValidation['enum'] = array(
+            'Assert\All' => array(
+                'constraints' => array(
+                    'Assert\Type' => array(
+                        'type' => 'string'
+                    )
+                )
+            )
+        );
     }
 
-    function populateFromPost ()
+    function populateFromPost (Request $request = null)
     {
-        parent::populateFromPost();
+        parent::populateFromPost($request);
     }
 
     function get_field_def()
