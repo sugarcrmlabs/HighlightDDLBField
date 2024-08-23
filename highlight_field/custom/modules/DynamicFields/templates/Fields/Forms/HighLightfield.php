@@ -66,6 +66,7 @@ function get_body(&$ss, $vardef)
     if(!empty($_REQUEST['refresh_dropdown']))
         $show = false;
 
+    $ss->assign('hideMassUpdate', false);
     $ss->assign('dropdowns', $dropdowns);
     $ss->assign('default_dropdowns', $default_dropdowns);
     $ss->assign('selected_dropdown', $selected_dropdown);
@@ -75,6 +76,7 @@ function get_body(&$ss, $vardef)
     $ss->assign('radio', isset($radio) ? $radio: false);
     $ss->assign('dropdown_name',(!empty($vardef['options']) ? $vardef['options'] : ''));
     $ss->assign('app_list_strings', "''");
+    $vardef['hidemassupdate'] = false;
     if (isset($vardef['colors']) && !empty($vardef['colors'])) {
         $colors = $vardef['colors'];
     } else {

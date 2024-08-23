@@ -16,14 +16,14 @@ $manifest = [
 	'acceptable_sugar_flavors' => ['ENT'],
 	'readme' => '',
 	'key' => 'highlight_field',
-	'author' => '',
-	'description' => '',
+	'author' => 'SugarLabs',
+	'description' => 'A SugarLabs module that allows you to highlight fields in the list view',
 	'icon' => '',
 	'is_uninstallable' => true,
 	'name' => 'HighLight Field',
 	'published_date' => '2023-11-08 12:00:00',
 	'type' => 'module',
-	'version' => '1.1.6',
+	'version' => '1.1.7',
 ];
 
 $installdefs = [
